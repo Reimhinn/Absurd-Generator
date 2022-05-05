@@ -17,7 +17,6 @@ let thirds = ["roulant", "hongrois", "brakmarien", "irlandais", "écarlate", "ex
 addVerb.addEventListener("click", () => {
   if (verbInput.value !== '') {
     verbs.push(verbInput.value)
-
     console.log(verbs)
   }
   verbInput.value = ""
@@ -26,7 +25,6 @@ addVerb.addEventListener("click", () => {
 addNoun.addEventListener("click", () => {
   if (nounInput.value !== '') {
     nouns.push(nounInput.value)
-    nounInput.value = " "
     console.log(nouns)
   }
   nounInput.value = ""
@@ -35,7 +33,6 @@ addNoun.addEventListener("click", () => {
 addThird.addEventListener("click", () => {
   if (thirdInput.value !== '') {
     thirds.push(thirdInput.value)
-    thirdInput.value = " "
     console.log(thirds)
   }
   thirdInput.value = ""
@@ -53,6 +50,7 @@ nounInput.addEventListener("keypress", (event) => {
     addNoun.click()
   }
 })
+
 thirdInput.addEventListener("keypress", (event) => {
   if (event.key === "Enter") {
     addThird.click()
