@@ -17,26 +17,47 @@ let thirds = ["roulant", "hongrois", "brakmarien", "irlandais", "écarlate", "ex
 addVerb.addEventListener("click", () => {
   if (verbInput.value !== '') {
     verbs.push(verbInput.value)
+
     console.log(verbs)
   }
-
+  verbInput.value = ""
 })
 
 addNoun.addEventListener("click", () => {
   if (nounInput.value !== '') {
     nouns.push(nounInput.value)
+    nounInput.value = " "
     console.log(nouns)
   }
+  nounInput.value = ""
 })
 
 addThird.addEventListener("click", () => {
   if (thirdInput.value !== '') {
     thirds.push(thirdInput.value)
+    thirdInput.value = " "
     console.log(thirds)
   }
-
+  thirdInput.value = ""
 })
 
+
+verbInput.addEventListener("keypress", (event) => {
+  if (event.key === "Enter") {
+    addVerb.click()
+  }
+})
+
+nounInput.addEventListener("keypress", (event) => {
+  if (event.key === "Enter") {
+    addNoun.click()
+  }
+})
+nounThird.addEventListener("keypress", (event) => {
+  if (event.key === "Enter") {
+    addThird.click()
+  }
+})
 
 
 generateWord.addEventListener("click", generateName)
