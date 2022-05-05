@@ -53,7 +53,7 @@ nounInput.addEventListener("keypress", (event) => {
     addNoun.click()
   }
 })
-nounThird.addEventListener("keypress", (event) => {
+thirdInput.addEventListener("keypress", (event) => {
   if (event.key === "Enter") {
     addThird.click()
   }
