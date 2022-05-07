@@ -8,6 +8,10 @@ const nounInput = document.querySelector(".noun-input")
 const thirdInput = document.querySelector(".third-input")
 const wordInput = document.querySelector(".word-input")
 
+const verbsListContainer = document.querySelector(".verbs-list-container")
+const nounsListContainer = document.querySelector(".nouns-list-container")
+const thirdsListContainer = document.querySelector(".thirds-list-container")
+
 let verbs = ["porte", "lance", "casse", "roule", "gratte", "range", "allume", "pince", "tourne", "claque", "branle", "caresse", "épluche" ,"coupe", "sauce", "croque", "suce", "attrape", "déplie", "perce", "saute", "pique", "ouvre", "micro", "encule", "décapite", "anti"]
 
 let nouns = ["cornet", "endive", "gobelet", "betterave", "canard", "saucisse", "roumain", "craquotte", "lampadaire", "ampoule", "nageoire", "kebab", "dindon", "dauphin", "autiste", "croquette", "barbiche", "bougnoule","pastèque", "fourchette", "croque-monsieur", "chouette", "croûte", "crouton", "sauterelle", "truite", "poutre", "silex", "cadavre", "ongle", "orteil", "flûte", "plume", "plumeau", "mitaine", "brochette", "grelot", "grumeau"]
@@ -20,6 +24,7 @@ addVerb.addEventListener("click", () => {
     console.log(verbs)
   }
   verbInput.value = ""
+  updateData()
 })
 
 addNoun.addEventListener("click", () => {
@@ -28,6 +33,7 @@ addNoun.addEventListener("click", () => {
     console.log(nouns)
   }
   nounInput.value = ""
+  updateData()
 })
 
 addThird.addEventListener("click", () => {
@@ -36,6 +42,7 @@ addThird.addEventListener("click", () => {
     console.log(thirds)
   }
   thirdInput.value = ""
+  updateData()
 })
 
 
@@ -66,3 +73,30 @@ function generateName(){
   let randomThird = Math.floor(Math.random() * thirds.length)
    let generatedWord = ("un" + " " + verbs[randomVerb] + "-" + nouns[randomNoun] + " " + thirds[randomThird])
    wordInput.innerText = generatedWord}
+
+// nounsListContainer.innerText = nouns
+// thirdsListContainer.innerText = thirds
+
+
+
+function updateData() {
+
+
+  let verbTemplate = verbs.map(verb =>
+    `<li>${verb}</li>`).join('\n');
+    verbsListContainer.innerHTML = verbTemplate
+
+  let nounTemplate = nouns.map(noun =>
+    `<li>${noun}</li>`).join('\n');
+    nounsListContainer.innerHTML = nounTemplate
+
+  let thirdTemplate = thirds.map(third =>
+    `<li>${third}</li>`).join('\n');
+    thirdsListContainer.innerHTML = thirdTemplate
+
+
+}
+
+updateData()
+
+

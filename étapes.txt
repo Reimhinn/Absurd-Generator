@@ -1,0 +1,1 @@
+ne pas permettre de majuscules sur les imputs
