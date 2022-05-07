@@ -8,11 +8,11 @@ const nounInput = document.querySelector(".noun-input")
 const thirdInput = document.querySelector(".third-input")
 const wordInput = document.querySelector(".word-input")
 
-let verbs = ["porte", "lance", "casse", "roule", "gratte", "range", "allume", "pince", "tourne", "claque", "branle", "caresse"]
+let verbs = ["porte", "lance", "casse", "roule", "gratte", "range", "allume", "pince", "tourne", "claque", "branle", "caresse", "épluche" ,"coupe", "sauce", "croque", "suce", "attrape", "déplie", "perce", "saute", "pique", "ouvre", "micro", "encule", "décapite", "anti"]
 
-let nouns = ["cornet", "andive", "gobelet", "betterave", "canard", "saucisse", "roumain", "craquotte", "lampadaire", "ampoule", "nageoire", "kebab", "dindon", "dauphin", "autiste", "croquette", "barbiche", "bougnoule"]
+let nouns = ["cornet", "endive", "gobelet", "betterave", "canard", "saucisse", "roumain", "craquotte", "lampadaire", "ampoule", "nageoire", "kebab", "dindon", "dauphin", "autiste", "croquette", "barbiche", "bougnoule","pastèque", "fourchette", "croque-monsieur", "chouette", "croûte", "crouton", "sauterelle", "truite", "poutre", "silex", "cadavre", "ongle", "orteil", "flûte", "plume", "plumeau", "mitaine", "brochette", "grelot", "grumeau"]
 
-let thirds = ["roulant", "hongrois", "brakmarien", "irlandais", "écarlate", "explosif", "norvégien", "bontarien", "de gitan", "suedois", "portuguais", "belge", "alsaciens", "à corne", "en acier", "en bois", "en cuir", "multicolore"]
+let thirds = ["inversé", "de velours", "en mousse", "putréfié", "graduel", "espagnol", "exponentiel", "à la crème de marrons", "roumain", "finlandais", "dégressif", "de bicarbonate", "antioxydant", "antibactérien", "déconfit", "confit", "moldave", "miniature", "géant", "hypnotique", "des enfers", "garanti 2 jours", "garanti 1 an", "roulant", "hongrois", "irlandais", "écarlate", "explosif", "norvégien", "de gitan", "suedois", "portuguais", "belge", "alsaciens", "à corne", "en acier", "en bois", "en cuir", "multicolore"]
 
 addVerb.addEventListener("click", () => {
   if (verbInput.value !== '') {
