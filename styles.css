@@ -73,11 +73,6 @@ button {
   font-weight: medium;
 }
 
-.flex-cross {
-  display: flex;
-  justify-content: space-evenly;
-}
-
 .delete-cross {
   padding-top: 4px;
   color: rgb(134, 4, 4);
@@ -85,6 +80,13 @@ button {
   display: none;
   cursor: pointer;
 }
+
+.flex-cross {
+  display: flex;
+  justify-content: space-around;
+}
+
+
 
 .flex-cross:hover .delete-cross {
   display: flex;
