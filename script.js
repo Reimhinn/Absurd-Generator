@@ -79,10 +79,17 @@ function generateName(){
   let randomNoun = Math.floor(Math.random() * nouns.length)
   let randomThird = Math.floor(Math.random() * thirds.length)
    let generatedWord = ("un" + " " + verbs[randomVerb] + "-" + nouns[randomNoun] + " " + thirds[randomThird])
-   wordInput.innerText = generatedWord}
+   wordInput.classList.remove("word-input")
+   void wordInput.offsetWidth
+   wordInput.classList.add("word-input")
+   wordInput.innerText = generatedWord
+  }
+
 
 // nounsListContainer.innerText = nouns
 // thirdsListContainer.innerText = thirds
+
+// wordInput.classList.add(".word-input-ani")
 
 
 
@@ -104,19 +111,6 @@ function updateData() {
 
     const deleteCross = document.querySelectorAll(".delete-cross")
 
-// function deleteWord (array) {
-//   deleteCross.forEach(cross => {
-//     cross.addEventListener("click", (event) => {
-
-//       updateData()
-//     })
-//   });
-// }
-
-// function findArray() {
-
-// }
-
 
 deleteCross.forEach(cross => {
   cross.addEventListener("click", (event) => {
@@ -125,19 +119,30 @@ deleteCross.forEach(cross => {
       let target = event.target
       let textToDelete = target.previousSibling.innerText
       let textIndex = verbs.indexOf(textToDelete)
-      verbs.splice(textIndex, 1)
+      var result = confirm(`Supprimer le mot "${textToDelete}" de la liste ?`);
+        if (result) {
+          verbs.splice(textIndex, 1)
+        }
+
+
     }
     else if (target.className.includes("noun-delete-cross") ) {
       let target = event.target
       let textToDelete = target.previousSibling.innerText
       let textIndex = nouns.indexOf(textToDelete)
-      nouns.splice(textIndex, 1)
+      var result = confirm(`Supprimer le mot "${textToDelete}" de la liste ?`);
+        if (result) {
+          nouns.splice(textIndex, 1)
+        }
     }
     else if (target.className.includes("third-delete-cross") ) {
       let target = event.target
       let textToDelete = target.previousSibling.innerText
       let textIndex = thirds.indexOf(textToDelete)
-      thirds.splice(textIndex, 1)
+      var result = confirm(`Supprimer le mot "${textToDelete}" de la liste ?`);
+        if (result) {
+          thirds.splice(textIndex, 1)
+        }
     }
     updateData()
   })
@@ -145,9 +150,57 @@ deleteCross.forEach(cross => {
 
 }
 
+document.querySelector(".delete-all-words").addEventListener("click", deleteAllWords)
+
+function deleteAllWords() {
+  verbs = []
+  nouns = []
+  thirds = []
+  updateData()
+}
+
+let saveIsDisabled = false
+
+function createSave() {
+
+  if (saveIsDisabled) {
+    return;
+  }
+
+  const wordsData = {
+    verbs: verbs,
+    nouns: nouns,
+    thirds: thirds,
+  }
+
+  const wordsDataJson = JSON.stringify(wordsData);
+  localStorage.setItem('words', wordsDataJson);
+}
+
+function getSave() {
+  const wordsDataJson = localStorage.getItem("words")
+
+  if (!wordsDataJson) {
+    return;
+  }
+
+  const wordsData = JSON.parse(wordsDataJson)
+
+  verbs = wordsData.verbs;
+  nouns = wordsData.nouns;
+  thirds = wordsData.thirds;
+}
+
+function resetSave() {
+  saveIsDisabled = true;
+  localStorage.removeItem('words');
+  window.location.reload();
+}
+
+document.querySelector(".reset-save").addEventListener("click", resetSave)
 
 
-
-
+generateName()
+getSave();
+setInterval(createSave, 1000);
 updateData()
-

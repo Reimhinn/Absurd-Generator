@@ -1,7 +1,2 @@
-problème des croix
-
-
-sauvegarde en local storage
-shadow on buttons hover
-
+pouvoir ajouter des favoris
 faire 2 catégories sur la page

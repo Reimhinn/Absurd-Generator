@@ -8,23 +8,29 @@ button {
   height: 50px;
   border-color: orange;
   border-radius: 10px;
-  align-self: center;
   margin-bottom: 1vh;
   cursor: pointer;
   font-weight: 600;
   font-family: 'Roboto', sans-serif;
   background-color: aliceblue;
+  transition: 0.3s all;
+}
+
+button:hover {
+  color: orange;
+  box-shadow: 2px 2px 11px -3px rgba(0,0,0,0.80)
 }
 
 .word-input {
   font-size: 50px;
   margin-left: 11vw;
   margin-top: 29vh;
+  font-family: 'Cinzel', serif;
+  animation: pop-text 1s;
 }
 
 .content-wrapper {
   display: flex;
-  /* flex-direction: column; */
 }
 
 .list-containers {
@@ -32,12 +38,15 @@ button {
   overflow: hidden;
   border: 1px solid grey;
   border-radius: 15px;
-  text-align: center;
   list-style-type: none;
   font-style: italic;
   font-size: 20px;
+  word-wrap: break-word;
 }
 
+li {
+  padding-bottom: 1vw;
+}
 
 .add-wrapper {
   display: flex;
@@ -62,15 +71,14 @@ button {
 .generate-word {
   margin-left: 15vw;
   margin-right: 15vw;
+  margin-top: 4vw;
   border-color: green;
-  color: green;
+  width: 25vw;
 }
 
-.word-wrapper {
-  display: flex;
-  flex-direction: column;
-  font-family: 'Cinzel', serif;
-  font-weight: medium;
+
+.generate-word:hover {
+  color: green;
 }
 
 
@@ -80,15 +88,31 @@ button {
 }
 
 
-
 .flex-cross:hover .delete-cross {
-  display: flex;
+  display: block;
+  color: rgb(134, 4, 4);
 }
 
 .delete-cross {
   padding-top: 4px;
-  color: rgb(134, 4, 4);
+  color: grey;
   font-size: 16px;
-  display: none;
   cursor: pointer;
+}
+
+.reset-save, .delete-all-words {
+  border-color: rgb(131, 0, 0);
+}
+
+.reset-save:hover, .delete-all-words:hover{
+  color: rgb(131, 0, 0);
+}
+
+@keyframes pop-text {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
