@@ -27,10 +27,10 @@ button:hover {
 
 .word-input {
   font-size: 40px;
-  margin-left: 11vw;
-  margin-top: 29vh;
-  font-family: 'Cinzel', serif;
-  animation: pop-text 1s;
+  margin-left: 180px;
+  margin-top: 310px;
+  font-family: Cinzel, serif;
+  animation: 1s ease 0s 1 normal none running pop-text;
   white-space: nowrap;
   cursor: pointer;
 }
@@ -91,6 +91,10 @@ li {
   color: grey;
   font-size: 16px;
   cursor: pointer;
+}
+
+.flex-save-buttons {
+  margin-left: 200px;
 }
 
 .reset-save, .delete-all-words {

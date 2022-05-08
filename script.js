@@ -18,7 +18,7 @@ let verbs = ["porte", "lance", "casse", "roule", "gratte", "range", "allume", "p
 
 let nouns = ["cornet", "endive", "gobelet", "betterave", "canard", "saucisse", "roumain", "craquotte", "lampadaire", "ampoule", "nageoire", "kebab", "dindon", "dauphin", "autiste", "croquette", "barbiche", "bougnoule","pastèque", "fourchette", "croque-monsieur", "chouette", "croûte", "crouton", "sauterelle", "truite", "poutre", "silex", "cadavre", "ongle", "orteil", "flûte", "plume", "plumeau", "mitaine", "brochette", "grelot", "grumeau"]
 
-let thirds = ["austro-hongrois", "inversé", "de velours", "en mousse", "putréfié", "graduel", "espagnol", "exponentiel", "à la crème de marrons", "roumain", "finlandais", "dégressif", "de bicarbonate", "antioxydant", "antibactérien", "déconfit", "confit", "moldave", "miniature", "géant", "hypnotique", "des enfers", "garanti 2 jours", "garanti 1 an", "roulant", "hongrois", "irlandais", "écarlate", "explosif", "norvégien", "de gitan", "suedois", "portuguais", "belge", "alsaciens", "à corne", "en acier", "en bois", "en cuir", "multicolore"]
+let thirds = ["austro-hongrois", "inversé", "de velours", "en mousse", "putréfié", "graduel", "espagnol", "exponentiel", "à la crème de marrons", "roumain", "finlandais", "dégressif", "nazi", "de bicarbonate", "antioxydant", "antibactérien", "déconfit", "confit", "moldave", "miniature", "géant", "hypnotique", "des enfers", "garanti 2 jours", "garanti 1 an", "roulant", "hongrois", "irlandais", "écarlate", "explosif", "norvégien", "de gitan", "suedois", "portuguais", "belge", "alsaciens", "à corne", "en acier", "en bois", "en cuir", "multicolore"]
 
 
 
@@ -84,14 +84,7 @@ function generateName(){
    wordInput.classList.add("word-input")
    wordInput.innerText = generatedWord
    rollCount++
-   console.log(rollCount)
   }
-
-
-// nounsListContainer.innerText = nouns
-// thirdsListContainer.innerText = thirds
-
-// wordInput.classList.add(".word-input-ani")
 
 
 
@@ -150,7 +143,6 @@ deleteCross.forEach(cross => {
   })
 })
 
-
 }
 
 document.querySelector(".delete-all-words").addEventListener("click", deleteAllWords)
@@ -174,7 +166,7 @@ function createSave() {
     verbs: verbs,
     nouns: nouns,
     thirds: thirds,
-    rollCount: rollCount,
+    rollCount: rollCount
   }
 
   const wordsDataJson = JSON.stringify(wordsData);
