@@ -4,7 +4,7 @@ body {
 }
 
 button {
-  min-width: 120px;
+  width: 120px;
   height: 50px;
   border-color: orange;
   border-radius: 10px;
@@ -21,12 +21,18 @@ button:hover {
   box-shadow: 2px 2px 11px -3px rgba(0,0,0,0.80)
 }
 
+.add-third, .add-noun, .add-verb {
+  width: 100%;
+}
+
 .word-input {
-  font-size: 50px;
+  font-size: 40px;
   margin-left: 11vw;
   margin-top: 29vh;
   font-family: 'Cinzel', serif;
   animation: pop-text 1s;
+  white-space: nowrap;
+  cursor: pointer;
 }
 
 .content-wrapper {
@@ -62,25 +68,12 @@ li {
   font-size: 10px
 }
 
-.end-wrapper {
+
+.word-flex {
   display: flex;
-  justify-content: space-between;
-  width: 45vw;
+  flex-direction: column;
+  margin-left: -130px;
 }
-
-.generate-word {
-  margin-left: 15vw;
-  margin-right: 15vw;
-  margin-top: 4vw;
-  border-color: green;
-  width: 25vw;
-}
-
-
-.generate-word:hover {
-  color: green;
-}
-
 
 .flex-cross {
   display: flex;

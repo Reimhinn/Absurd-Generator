@@ -12,7 +12,7 @@ const verbsListContainer = document.querySelector(".verbs-list-container")
 const nounsListContainer = document.querySelector(".nouns-list-container")
 const thirdsListContainer = document.querySelector(".thirds-list-container")
 
-
+let rollCount = 0
 
 let verbs = ["porte", "lance", "casse", "roule", "gratte", "range", "allume", "pince", "tourne", "claque", "branle", "caresse", "épluche" ,"coupe", "sauce", "croque", "suce", "attrape", "déplie", "perce", "saute", "pique", "ouvre", "micro", "encule", "décapite", "anti"]
 
@@ -83,6 +83,8 @@ function generateName(){
    void wordInput.offsetWidth
    wordInput.classList.add("word-input")
    wordInput.innerText = generatedWord
+   rollCount++
+   console.log(rollCount)
   }
 
 
@@ -148,6 +150,7 @@ deleteCross.forEach(cross => {
   })
 })
 
+
 }
 
 document.querySelector(".delete-all-words").addEventListener("click", deleteAllWords)
@@ -171,6 +174,7 @@ function createSave() {
     verbs: verbs,
     nouns: nouns,
     thirds: thirds,
+    rollCount: rollCount,
   }
 
   const wordsDataJson = JSON.stringify(wordsData);
@@ -189,6 +193,7 @@ function getSave() {
   verbs = wordsData.verbs;
   nouns = wordsData.nouns;
   thirds = wordsData.thirds;
+  rollCount = wordsData.rollCount;
 }
 
 function resetSave() {
