@@ -12,6 +12,8 @@ const verbsListContainer = document.querySelector(".verbs-list-container")
 const nounsListContainer = document.querySelector(".nouns-list-container")
 const thirdsListContainer = document.querySelector(".thirds-list-container")
 
+
+
 let verbs = ["porte", "lance", "casse", "roule", "gratte", "range", "allume", "pince", "tourne", "claque", "branle", "caresse", "épluche" ,"coupe", "sauce", "croque", "suce", "attrape", "déplie", "perce", "saute", "pique", "ouvre", "micro", "encule", "décapite", "anti"]
 
 let nouns = ["cornet", "endive", "gobelet", "betterave", "canard", "saucisse", "roumain", "craquotte", "lampadaire", "ampoule", "nageoire", "kebab", "dindon", "dauphin", "autiste", "croquette", "barbiche", "bougnoule","pastèque", "fourchette", "croque-monsieur", "chouette", "croûte", "crouton", "sauterelle", "truite", "poutre", "silex", "cadavre", "ongle", "orteil", "flûte", "plume", "plumeau", "mitaine", "brochette", "grelot", "grumeau"]
@@ -20,7 +22,7 @@ let thirds = ["inversé", "de velours", "en mousse", "putréfié", "graduel", "e
 
 addVerb.addEventListener("click", () => {
   if (verbInput.value !== '') {
-    verbs.push(verbInput.value)
+    verbs.push(verbInput.value.toLowerCase())
     console.log(verbs)
   }
   verbInput.value = ""
@@ -29,7 +31,7 @@ addVerb.addEventListener("click", () => {
 
 addNoun.addEventListener("click", () => {
   if (nounInput.value !== '') {
-    nouns.push(nounInput.value)
+    nouns.push(nounInput.value.toLowerCase())
     console.log(nouns)
   }
   nounInput.value = ""
@@ -38,7 +40,7 @@ addNoun.addEventListener("click", () => {
 
 addThird.addEventListener("click", () => {
   if (thirdInput.value !== '') {
-    thirds.push(thirdInput.value)
+    thirds.push(thirdInput.value.toLowerCase())
     console.log(thirds)
   }
   thirdInput.value = ""
@@ -65,6 +67,9 @@ thirdInput.addEventListener("keypress", (event) => {
 })
 
 
+
+
+
 generateWord.addEventListener("click", generateName)
 
 function generateName(){
@@ -79,24 +84,47 @@ function generateName(){
 
 
 
+
 function updateData() {
 
 
   let verbTemplate = verbs.map(verb =>
-    `<li>${verb}</li>`).join('\n');
+    `<span class="flex-cross"><li>${verb}</li><i class="fa-solid fa-xmark delete-cross"></i></span>`).join('\n');
     verbsListContainer.innerHTML = verbTemplate
 
   let nounTemplate = nouns.map(noun =>
-    `<li>${noun}</li>`).join('\n');
+    `<span class="flex-cross"><li>${noun}</li><i class="fa-solid fa-xmark delete-cross"></i></span>`).join('\n');
     nounsListContainer.innerHTML = nounTemplate
 
   let thirdTemplate = thirds.map(third =>
-    `<li>${third}</li>`).join('\n');
+    `<span class="flex-cross"><li>${third}</li><i class="fa-solid fa-xmark delete-cross"></i></span>`).join('\n');
     thirdsListContainer.innerHTML = thirdTemplate
+
+    const deleteCross = document.querySelectorAll(".delete-cross")
+
+function deleteWord (array) {
+  deleteCross.forEach(cross => {
+    cross.addEventListener("click", (event) => {
+      let target = event.target
+      let textToDelete = target.previousSibling.innerText
+      let textIndex = array.indexOf(textToDelete)
+      array.splice(textIndex, 1)
+      console.log(textIndex)
+      updateData()
+    })
+  });
+}
+deleteWord(verbs)
+deleteWord(nouns)
+deleteWord(thirds)
+
+
 
 
 }
 
-updateData()
 
+
+
+updateData()
 
