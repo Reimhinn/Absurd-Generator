@@ -18,7 +18,9 @@ let verbs = ["porte", "lance", "casse", "roule", "gratte", "range", "allume", "p
 
 let nouns = ["cornet", "endive", "gobelet", "betterave", "canard", "saucisse", "roumain", "craquotte", "lampadaire", "ampoule", "nageoire", "kebab", "dindon", "dauphin", "autiste", "croquette", "barbiche", "bougnoule","pastèque", "fourchette", "croque-monsieur", "chouette", "croûte", "crouton", "sauterelle", "truite", "poutre", "silex", "cadavre", "ongle", "orteil", "flûte", "plume", "plumeau", "mitaine", "brochette", "grelot", "grumeau"]
 
-let thirds = ["inversé", "de velours", "en mousse", "putréfié", "graduel", "espagnol", "exponentiel", "à la crème de marrons", "roumain", "finlandais", "dégressif", "de bicarbonate", "antioxydant", "antibactérien", "déconfit", "confit", "moldave", "miniature", "géant", "hypnotique", "des enfers", "garanti 2 jours", "garanti 1 an", "roulant", "hongrois", "irlandais", "écarlate", "explosif", "norvégien", "de gitan", "suedois", "portuguais", "belge", "alsaciens", "à corne", "en acier", "en bois", "en cuir", "multicolore"]
+let thirds = ["austro-hongrois", "inversé", "de velours", "en mousse", "putréfié", "graduel", "espagnol", "exponentiel", "à la crème de marrons", "roumain", "finlandais", "dégressif", "de bicarbonate", "antioxydant", "antibactérien", "déconfit", "confit", "moldave", "miniature", "géant", "hypnotique", "des enfers", "garanti 2 jours", "garanti 1 an", "roulant", "hongrois", "irlandais", "écarlate", "explosif", "norvégien", "de gitan", "suedois", "portuguais", "belge", "alsaciens", "à corne", "en acier", "en bois", "en cuir", "multicolore"]
+
+
 
 addVerb.addEventListener("click", () => {
   if (verbInput.value !== '') {
@@ -89,39 +91,60 @@ function updateData() {
 
 
   let verbTemplate = verbs.map(verb =>
-    `<span class="flex-cross"><li>${verb}</li><i class="fa-solid fa-xmark delete-cross"></i></span>`).join('\n');
+    `<span class="flex-cross"><li>${verb}</li><i class="fa-solid fa-xmark verb-delete-cross delete-cross"></i></span>`).join('\n');
     verbsListContainer.innerHTML = verbTemplate
 
   let nounTemplate = nouns.map(noun =>
-    `<span class="flex-cross"><li>${noun}</li><i class="fa-solid fa-xmark delete-cross"></i></span>`).join('\n');
+    `<span class="flex-cross"><li>${noun}</li><i class="fa-solid fa-xmark noun-delete-cross delete-cross"></i></span>`).join('\n');
     nounsListContainer.innerHTML = nounTemplate
 
   let thirdTemplate = thirds.map(third =>
-    `<span class="flex-cross"><li>${third}</li><i class="fa-solid fa-xmark delete-cross"></i></span>`).join('\n');
+    `<span class="flex-cross"><li>${third}</li><i class="fa-solid fa-xmark third-delete-cross delete-cross"></i></span>`).join('\n');
     thirdsListContainer.innerHTML = thirdTemplate
 
     const deleteCross = document.querySelectorAll(".delete-cross")
 
-function deleteWord (array) {
-  deleteCross.forEach(cross => {
-    cross.addEventListener("click", (event) => {
+// function deleteWord (array) {
+//   deleteCross.forEach(cross => {
+//     cross.addEventListener("click", (event) => {
+
+//       updateData()
+//     })
+//   });
+// }
+
+// function findArray() {
+
+// }
+
+
+deleteCross.forEach(cross => {
+  cross.addEventListener("click", (event) => {
+    let target = event.target
+    if (target.className.includes("verb-delete-cross") ) {
       let target = event.target
       let textToDelete = target.previousSibling.innerText
-      let textIndex = array.indexOf(textToDelete)
-      array.splice(textIndex, 1)
-      console.log(textIndex)
-      updateData()
-    })
-  });
+      let textIndex = verbs.indexOf(textToDelete)
+      verbs.splice(textIndex, 1)
+    }
+    else if (target.className.includes("noun-delete-cross") ) {
+      let target = event.target
+      let textToDelete = target.previousSibling.innerText
+      let textIndex = nouns.indexOf(textToDelete)
+      nouns.splice(textIndex, 1)
+    }
+    else if (target.className.includes("third-delete-cross") ) {
+      let target = event.target
+      let textToDelete = target.previousSibling.innerText
+      let textIndex = thirds.indexOf(textToDelete)
+      thirds.splice(textIndex, 1)
+    }
+    updateData()
+  })
+})
+
 }
-deleteWord(verbs)
-deleteWord(nouns)
-deleteWord(thirds)
 
-
-
-
-}
 
 
 

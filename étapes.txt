@@ -1,2 +1,7 @@
+problème des croix
+
+
 sauvegarde en local storage
 shadow on buttons hover
+
+faire 2 catégories sur la page
