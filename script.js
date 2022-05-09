@@ -148,10 +148,13 @@ deleteCross.forEach(cross => {
 document.querySelector(".delete-all-words").addEventListener("click", deleteAllWords)
 
 function deleteAllWords() {
-  verbs = []
-  nouns = []
-  thirds = []
-  updateData()
+  var result = confirm(`Supprimer tous les mots ?`);
+  if (result) {
+    verbs = []
+    nouns = []
+    thirds = []
+    updateData()
+  }
 }
 
 let saveIsDisabled = false
@@ -189,9 +192,13 @@ function getSave() {
 }
 
 function resetSave() {
-  saveIsDisabled = true;
-  localStorage.removeItem('words');
-  window.location.reload();
+  var result = confirm(`Remettre les mots par défaut ?`);
+  if (result) {
+    saveIsDisabled = true;
+    localStorage.removeItem('words');
+    window.location.reload();
+  }
+
 }
 
 document.querySelector(".reset-save").addEventListener("click", resetSave)

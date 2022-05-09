@@ -1,3 +1,5 @@
-mettre des succès
-pouvoir ajouter des favoris
+régler problèmes z index
+mettre indicateur clic
 faire 2 catégories sur la page
+pouvoir ajouter des favoris
+mettre des succès
