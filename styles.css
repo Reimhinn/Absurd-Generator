@@ -72,7 +72,7 @@ li {
 .word-flex {
   display: flex;
   flex-direction: column;
-  margin-left: -130px;
+  /* margin-left: -130px; */
 }
 
 .flex-cross {
@@ -82,7 +82,6 @@ li {
 
 
 .flex-cross:hover .delete-cross {
-  display: block;
   color: rgb(134, 4, 4);
 }
 

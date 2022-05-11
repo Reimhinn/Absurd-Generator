@@ -14,11 +14,12 @@ const thirdsListContainer = document.querySelector(".thirds-list-container")
 
 let rollCount = 0
 
-let verbs = ["porte", "lance", "casse", "roule", "gratte", "range", "allume", "pince", "tourne", "claque", "branle", "caresse", "épluche" ,"coupe", "sauce", "croque", "suce", "attrape", "déplie", "perce", "saute", "pique", "ouvre", "micro", "encule", "décapite", "anti"]
 
-let nouns = ["cornet", "endive", "gobelet", "betterave", "canard", "saucisse", "roumain", "craquotte", "lampadaire", "ampoule", "nageoire", "kebab", "dindon", "dauphin", "autiste", "croquette", "barbiche", "bougnoule","pastèque", "fourchette", "croque-monsieur", "chouette", "croûte", "crouton", "sauterelle", "truite", "poutre", "silex", "cadavre", "ongle", "orteil", "flûte", "plume", "plumeau", "mitaine", "brochette", "grelot", "grumeau"]
+let verbs = ["brule", "porte", "rince", "chatouille", "croque", "creuse", "nettoie", "essuie", "dompte", "ronge", "éponge", "découpe", "accélérateur à", "mixeur à", "épile", "démonte", "réacteur à", "distributeur à", "tire", "four à", "entrepot à", "écrase", "lèche", "fouette", "bocal à", "arrose", "bar à", "chevauche", "pain aux", "étire", "appareil à", "étouffe", "bol à", "lance", "casse", "roule", "gratte", "range", "allume", "pince", "tourne", "claque", "branle", "caresse", "épluche" ,"coupe", "sauce", "croque", "suce", "attrape", "déplie", "perce", "saute", "pique", "ouvre", "micro", "encule", "décapite", "robot-anti"]
 
-let thirds = ["austro-hongrois", "inversé", "de velours", "en mousse", "putréfié", "graduel", "espagnol", "exponentiel", "à la crème de marrons", "roumain", "finlandais", "dégressif", "nazi", "de bicarbonate", "antioxydant", "antibactérien", "déconfit", "confit", "moldave", "miniature", "géant", "hypnotique", "des enfers", "garanti 2 jours", "garanti 1 an", "roulant", "hongrois", "irlandais", "écarlate", "explosif", "norvégien", "de gitan", "suedois", "portuguais", "belge", "alsaciens", "à corne", "en acier", "en bois", "en cuir", "multicolore"]
+let nouns = ["goudron", "papier", "tartine", "tetine", "brouette", "jambon", "truelle", "pelleteuse", "chaussette", "maracas", "polystyrène", "gimbarde", "tracteur", "crouton", "nouille", "poule", "biscotte", "cactus", "vache", "éponge", "lavabo", "légumes", "poussière", "dalmatiens", "câble HDMI", "pizza", "chocolat", "ratatouille", "patate douce", "pomme de terre", "patate", "verre d'eau", "carotte", "crêpe", "assiette", "porte-manteau", "saucisson", "oignon", "pancarte", "clou", "éolienne", "DVD", "tyrolienne", "pieuvre", "poulpe", "Macron", "crevette", "micro-ondes", "arrosoir", "grue", "têtons", "mine antipersonnelle", "tapis", "pépin", "anchois", "hérisson", "reblochon", "girafe", "dinosaure", "crapeau", "chapeau", "sourcils", "t-rex", "cornet", "endive", "gobelet", "betterave", "canard", "saucisse", "roumain", "craquotte", "lampadaire", "ampoule", "nageoire", "kebab", "dindon", "dauphin", "autiste", "croquette", "barbiche", "bougnoule","pastèque", "fourchette", "croque-monsieur", "chouette", "croûte", "crouton", "sauterelle", "truite", "poutre", "silex", "cadavre", "ongle", "orteil", "flûte", "plume", "plumeau", "mitaine", "brochette", "grelot", "grumeau"]
+
+let thirds = ["austro-hongrois", "automatique", "en polistyrène", "rebondissant", "quantique", "multidimensionnel", "à particules", "télécommandé", "sans fil", `à 5 euros`, "renouvelable", "grossophobe", "des années 70", "des années 80", "des années 90", "des années 2000", "communiste", "anarchiste", "étanche", "bon marché", "wish", "premier prix", "Leader Price", "en osier", "fluorescent", "sous stéroides", "pliable", "pare-balles", "defectueux", "édition limité", "tétraplégique", "mourrant", "ménopausé", "d'electriciens", "spatial", "atomique", "inversé", "de velours", "en mousse", "putréfié", "graduel", "espagnol", "exponentiel", "à la crème de marrons", "roumain", "finlandais", "dégressif", "nazi", "de bicarbonate", "antioxydant", "antibactérien", "déconfit", "confit", "moldave", "miniature", "géant", "hypnotique", "des enfers", "garanti 2 jours", "garanti 1 an", "roulant", "hongrois", "irlandais", "écarlate", "explosif", "norvégien", "de gitan", "suedois", "portuguais", "belge", "alsaciens", "à corne", "en acier", "en bois", "en cuir", "multicolore"]
 
 
 
@@ -69,10 +70,19 @@ thirdInput.addEventListener("keypress", (event) => {
 })
 
 
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    generateWord.click()
+  }
+})
+
 
 
 
 generateWord.addEventListener("click", generateName)
+
+
+
 
 function generateName(){
   let randomVerb = Math.floor(Math.random() * verbs.length)

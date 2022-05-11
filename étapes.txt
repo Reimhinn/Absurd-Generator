@@ -1,5 +1,6 @@
 régler problèmes z index
 mettre indicateur clic
-faire 2 catégories sur la page
 pouvoir ajouter des favoris
+retour arrière sur les mots déjà générés
+faire 2 catégories sur la page
 mettre des succès
