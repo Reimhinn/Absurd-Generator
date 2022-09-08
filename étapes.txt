@@ -1,6 +1,8 @@
-régler problèmes z index
+pouvoir supprimer tout une colonne
 mettre indicateur clic
 pouvoir ajouter des favoris
+faire 2 catégories sur la page/responsive
 retour arrière sur les mots déjà générés
-faire 2 catégories sur la page
+faire parler les mots
+pouvoir sécuriser des mots en cliquant dessus
 mettre des succès

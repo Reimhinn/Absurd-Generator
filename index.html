@@ -2,74 +2,81 @@
 <html>
   <head>
     <link href="styles.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <script src="https://kit.fontawesome.com/e2a96e8e7c.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/e2a96e8e7c.js" crossorigin="anonymous"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <script
+      src="https://kit.fontawesome.com/e2a96e8e7c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/e2a96e8e7c.js"
+      crossorigin="anonymous"
+    ></script>
 
     <title>Absurd Generator</title>
   </head>
 
   <main>
-
-  <div class="wrapper-add-general">
-
-    <div class="verb-wrapper add-wrapper">
-      <button class="add-verb">Ajouter un verbe</button>
-      <input class="verb-input" type="text">
-      <ul class="verbs-list-container list-containers"></ul>
-    </div>
-    <div class="verb-wrapper add-wrapper">
-      <button class="add-noun">Ajouter un nom</button>
-      <input class="noun-input" type="text">
-      <ul class="nouns-list-container list-containers"></ul>
-    </div>
-
+    <div class="wrapper-add-general">
       <div class="verb-wrapper add-wrapper">
+        <button class="add-verb">Ajouter un verbe</button>
+        <input class="verb-input" type="text" />
+        <ul class="verbs-list-container list-containers"></ul>
+        <button class="delete-column delete-verb-column">Supprimer les mots de cette colonne</button>
+      </div>
+      <div class="noun-wrapper add-wrapper">
+        <button class="add-noun">Ajouter un nom</button>
+        <input class="noun-input" type="text" />
+        <ul class="nouns-list-container list-containers"></ul>
+        <button class="delete-column delete-noun-column">Supprimer les mots de cette colonne</button>
+
+      </div>
+
+      <div class="third-wrapper add-wrapper">
         <button class="add-third">Ajouter un complément</button>
-        <input class="third-input" type="text">
+        <input class="third-input" type="text" />
         <ul class="thirds-list-container list-containers"></ul>
+        <button class="delete-column delete-third-column">Supprimer les mots de cette colonne</button>
+
       </div>
 
-
-    <div class="word-flex">
-      <div class="flex-save-buttons">
-        <button class="reset-save">Remettre les mots par défaut</button>
-        <button class="delete-all-words">Supprimer tous les mots</button>
-        <div class="clic-advice">
-          <h2>Cliquez pour relancer</h2>
-          <i class="fa-solid fa-arrow-pointer pointer"></i>
+      <div class="word-flex">
+        <div class="flex-save-buttons">
+          <button class="reset-save">Remettre les mots par défaut</button>
+          <button class="delete-all-words">Supprimer tous les mots</button>
+          <div class="clic-advice">
+            <h2>Cliquez pour relancer</h2>
+            <i class="fa-solid fa-arrow-pointer pointer"></i>
+          </div>
         </div>
+
+        <span class="generate-word word-input"></span>
       </div>
-
-       <span class="generate-word word-input"></span>
-   </div>
-
-
-
-
-  </div>
-
-
-
-
-
-
-
-
-
-
+    </div>
 
     <script src="script.js"></script>
   </main>
+</html>

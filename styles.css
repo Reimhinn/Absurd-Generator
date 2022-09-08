@@ -21,7 +21,7 @@ button:hover {
   box-shadow: 2px 2px 11px -3px rgba(0,0,0,0.80)
 }
 
-.add-third, .add-noun, .add-verb {
+.add-third, .add-noun, .add-verb, .delete-column {
   width: 100%;
 }
 
@@ -43,11 +43,13 @@ button:hover {
   padding: 1vw;
   overflow: hidden;
   border: 1px solid grey;
-  border-radius: 15px;
+  /* border-radius: 15px; */
   list-style-type: none;
   font-style: italic;
   font-size: 20px;
   word-wrap: break-word;
+  overflow-y: scroll;
+  height: 75vh;
 }
 
 li {
@@ -96,11 +98,11 @@ li {
   margin-left: 200px;
 }
 
-.reset-save, .delete-all-words {
+.reset-save, .delete-all-words, .delete-column {
   border-color: rgb(131, 0, 0);
 }
 
-.reset-save:hover, .delete-all-words:hover{
+.reset-save:hover, .delete-all-words:hover, .delete-column:hover{
   color: rgb(131, 0, 0);
 }
 
@@ -112,7 +114,3 @@ li {
     opacity: 1;
   }
 }
-
-/* .pointer {
-
-} */
